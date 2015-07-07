@@ -8,5 +8,7 @@ repositories {
 }
 
 dependencies {
+    compile 'org.jboss.weld:weld-core:2.2.14.Final'
+
     testCompile "junit:junit:4.11"
 }

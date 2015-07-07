@@ -1,4 +1,4 @@
-package br.com.explorer.sample.services;
+package br.com.explorer.sample.operations;
 
 import br.com.explorer.sample.model.Explorer;
 

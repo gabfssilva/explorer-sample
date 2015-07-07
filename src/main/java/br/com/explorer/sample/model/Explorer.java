@@ -83,4 +83,15 @@ public class Explorer {
         result = 31 * result + (yPosition != null ? yPosition.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Explorer{" +
+                "id=" + id +
+                ", planet=" + planet +
+                ", direction=" + direction +
+                ", xPosition=" + xPosition +
+                ", yPosition=" + yPosition +
+                '}';
+    }
 }
