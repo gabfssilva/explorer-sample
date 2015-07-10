@@ -1,5 +1,6 @@
 package br.com.explorer.sample.operations.qualifiers;
 
+import br.com.explorer.sample.model.OperationEnum;
 import br.com.explorer.sample.operations.OperationType;
 
 import javax.enterprise.util.AnnotationLiteral;
@@ -8,18 +9,18 @@ import javax.enterprise.util.AnnotationLiteral;
  * @author Gabriel Francisco - gabfssilva@gmail.com
  */
 public class OperationTypeAnnotationLiteral extends AnnotationLiteral<OperationType> implements OperationType {
-    private String value;
+    private OperationEnum value;
 
-    public OperationTypeAnnotationLiteral(String value) {
+    public OperationTypeAnnotationLiteral(OperationEnum value) {
         this.value = value;
     }
 
-    public static OperationTypeAnnotationLiteral operationType(String value) {
+    public static OperationTypeAnnotationLiteral operationType(OperationEnum value) {
         return new OperationTypeAnnotationLiteral(value);
     }
 
     @Override
-    public String value() {
+    public OperationEnum value() {
         return value;
     }
 }

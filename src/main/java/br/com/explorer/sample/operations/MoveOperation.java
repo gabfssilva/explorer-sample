@@ -1,11 +1,12 @@
 package br.com.explorer.sample.operations;
 
 import br.com.explorer.sample.model.Explorer;
+import br.com.explorer.sample.model.OperationEnum;
 
 /**
  * @author Gabriel Francisco - gabfssilva@gmail.com
  */
-@OperationType("M")
+@OperationType(OperationEnum.M)
 public class MoveOperation implements Operation {
     @Override
     public void apply(Explorer explorer) {

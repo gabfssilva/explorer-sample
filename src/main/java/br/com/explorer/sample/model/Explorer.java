@@ -1,5 +1,7 @@
 package br.com.explorer.sample.model;
 
+import java.util.List;
+
 /**
  * @author Gabriel Francisco - gabfssilva@gmail.com
  */
@@ -9,16 +11,9 @@ public class Explorer {
     private Direction direction;
     private Integer xPosition;
     private Integer yPosition;
+    private List<OperationEnum> operations;
 
     public Explorer() {
-    }
-
-    public Explorer(Long id, Planet planet, Direction direction, Integer xPosition, Integer yPosition) {
-        this.id = id;
-        this.planet = planet;
-        this.direction = direction;
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
     }
 
     public Long getId() {
@@ -59,6 +54,14 @@ public class Explorer {
 
     public void setyPosition(Integer yPosition) {
         this.yPosition = yPosition;
+    }
+
+    public List<OperationEnum> getOperations() {
+        return operations;
+    }
+
+    public void setOperations(List<OperationEnum> operations) {
+        this.operations = operations;
     }
 
     @Override
