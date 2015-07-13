@@ -2,6 +2,7 @@ package br.com.explorer.sample.services;
 
 import br.com.explorer.sample.model.Direction;
 import br.com.explorer.sample.model.Explorer;
+import br.com.explorer.sample.model.Planet;
 import br.com.explorer.sample.operations.MoveOperation;
 import br.com.explorer.sample.operations.TurnLeftOperation;
 import br.com.explorer.sample.operations.TurnRightOperation;
@@ -22,6 +23,7 @@ public class OperationChainTest {
 
         Explorer explorer = new Explorer();
 
+        explorer.setPlanet(getPlanet());
         explorer.setxPosition(1);
         explorer.setyPosition(2);
         explorer.setDirection(Direction.N);
@@ -50,6 +52,7 @@ public class OperationChainTest {
 
         Explorer explorer = new Explorer();
 
+        explorer.setPlanet(getPlanet());
         explorer.setxPosition(3);
         explorer.setyPosition(3);
         explorer.setDirection(Direction.E);
@@ -71,5 +74,12 @@ public class OperationChainTest {
         assertThat(explorer.getDirection(), equalTo(Direction.E));
         assertThat(explorer.getxPosition(), equalTo(5));
         assertThat(explorer.getyPosition(), equalTo(1));
+    }
+
+    private Planet getPlanet() {
+        Planet planet = new Planet();
+        planet.setHeight(5);
+        planet.setWidth(5);
+        return planet;
     }
 }

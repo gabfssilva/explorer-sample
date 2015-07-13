@@ -2,6 +2,7 @@ package br.com.explorer.sample.operations;
 
 import br.com.explorer.sample.model.Direction;
 import br.com.explorer.sample.model.Explorer;
+import br.com.explorer.sample.model.Planet;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -17,6 +18,8 @@ public class MoveOperationTest {
         MoveOperation operation = new MoveOperation();
 
         Explorer explorer = new Explorer();
+
+        explorer.setPlanet(getPlanet());
         explorer.setDirection(Direction.N);
         explorer.setxPosition(0);
         explorer.setyPosition(0);
@@ -32,6 +35,7 @@ public class MoveOperationTest {
         MoveOperation operation = new MoveOperation();
 
         Explorer explorer = new Explorer();
+        explorer.setPlanet(getPlanet());
         explorer.setDirection(Direction.N);
         explorer.setxPosition(1);
         explorer.setyPosition(0);
@@ -47,6 +51,7 @@ public class MoveOperationTest {
         MoveOperation operation = new MoveOperation();
 
         Explorer explorer = new Explorer();
+        explorer.setPlanet(getPlanet());
         explorer.setDirection(Direction.S);
         explorer.setxPosition(1);
         explorer.setyPosition(3);
@@ -55,5 +60,12 @@ public class MoveOperationTest {
 
         assertThat(explorer.getxPosition(), equalTo(1));
         assertThat(explorer.getyPosition(), equalTo(2));
+    }
+
+    private Planet getPlanet() {
+        Planet planet = new Planet();
+        planet.setHeight(5);
+        planet.setWidth(5);
+        return planet;
     }
 }
