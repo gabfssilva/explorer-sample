@@ -21,7 +21,7 @@ public class PlanetRepository {
     }
 
     public void save(Planet planet){
-        planet.setId(generateId());
+        planet.setId(planet.getId() == null ? generateId() : planet.getId());
         this.planets.put(planet.getId(), planet);
     }
 

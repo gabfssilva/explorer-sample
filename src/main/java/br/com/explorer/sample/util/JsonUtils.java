@@ -1,5 +1,6 @@
 package br.com.explorer.sample.util;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -9,6 +10,10 @@ import java.io.IOException;
  */
 public class JsonUtils {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
+    static {
+        OBJECT_MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+    }
 
     private JsonUtils(){}
 

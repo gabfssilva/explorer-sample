@@ -21,7 +21,7 @@ public class ExplorerRepository {
     }
 
     public void save(Explorer explorer){
-        explorer.setId(generateId());
+        explorer.setId(explorer.getId() == null ? generateId() : explorer.getId());
         this.explorers.put(explorer.getId(), explorer);
     }
 

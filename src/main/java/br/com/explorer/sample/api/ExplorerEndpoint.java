@@ -51,7 +51,14 @@ public class ExplorerEndpoint implements SparkConfigurer {
 
         post("/api/v1/planets/:planetId/explorers", (request, response) -> {
             Explorer explorer = asObject(request.body(), Explorer.class);
-            explorer.setPlanet(planetRepository.get(valueOf(request.params(":planetId"))));
+
+            Planet planet = planetRepository.get(valueOf(request.params(":planetId")));
+
+            if (planet == null) {
+                throw new RestfulException(404, "Not Found");
+            }
+
+            explorer.setPlanet(planet);
             explorerRepository.save(explorer);
             response.status(201);
             return asJson(explorer);
